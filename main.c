@@ -25,15 +25,13 @@ struct Test{
 int OutStructure(struct Test _test){
 	return _test.a+_test.b;	
 }
-
-void SetStructure(struct Test _test, int a, int b){
-	_test.a = a;
-	_test.b = b;
+void SetStructure(struct Test* _test, int a, int b){
+	_test->a = a;
+	_test->b = b;
 }
-
 int main(){
 	struct Test test;
-	SetStructure(test, 10,23);
+	SetStructure(&test, 10,23);
 	printf("test.a+test.b = %d \n", OutStructure(test));
 
 	int array[5] = {0,1,2,3,4};
